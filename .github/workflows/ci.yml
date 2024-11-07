@@ -28,3 +28,10 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: OpenAI Code Review
+        uses: openai/code-review-action@v1
+        with:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          open_ai_model: gpt-3.5-turbo
+          with-comment: true
